@@ -3,7 +3,11 @@ let express = require('express');
 let app = express();
 require('dotenv').config();
 
-
+/**
+Note: extended is a configuration option that tells body-parser which parsing needs to be used. 
+When extended=false it uses the classic encoding querystring library. 
+When extended=true it uses qs library for parsing
+*/
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
